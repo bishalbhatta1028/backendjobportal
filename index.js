@@ -30,15 +30,14 @@ app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/job", jobsRoute);
-
+app.get("/", (req, res) => {
+  res.send("welcome to the page");
+  console.log("hello");
+});
 //validation middleware
 app.use(errorMidddleware);
 app.use((req, res) => {
   res.status(404).send({ msg: "Resource not found" });
-});
-
-app.get("/", (req, res) => {
-  res.send("Welcome to my job portal");
 });
 
 //port
