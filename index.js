@@ -48,3 +48,4 @@ app.listen(PORT, () => {
     `My server started in ${process.env.DEV_MODE} mode on port no ${PORT}`
   );
 });
+export default app;
