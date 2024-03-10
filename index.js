@@ -30,10 +30,7 @@ app.use(cors());
 app.use("/auth", authRoute);
 app.use("/user", userRoute);
 app.use("/job", jobsRoute);
-app.get("/", (req, res) => {
-  res.send("welcome to the page");
-  console.log("hello");
-});
+
 //validation middleware
 app.use(errorMidddleware);
 app.use((req, res) => {
@@ -48,4 +45,3 @@ app.listen(PORT, () => {
     `My server started in ${process.env.DEV_MODE} mode on port no ${PORT}`
   );
 });
-export default app;
