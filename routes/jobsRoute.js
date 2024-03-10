@@ -140,7 +140,7 @@ const router = express.Router();
 //create jobs
 router.post("/create-job", userAuth, createJobController);
 // get jobs
-router.get("/get-job/", getJobController);
+router.get("/", getJobController);
 
 //get jobs by user
 router.get("/get-job/:id", userAuth, getJobByUser);
