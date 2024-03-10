@@ -30,7 +30,7 @@ app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/job", jobsRoute);
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("welcome to the page");
   console.log("hello");
 });
