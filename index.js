@@ -27,10 +27,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/", authRoute);
-app.use("/", userRoute);
-app.use("/", jobsRoute);
-
+app.use("/.auth", authRoute);
+app.use("/.user", userRoute);
+app.use("/.job", jobsRoute);
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 //validation middleware
 app.use(errorMidddleware);
 app.use((req, res) => {
