@@ -27,9 +27,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/", authRoute);
-app.use("/", userRoute);
-app.use("/", jobsRoute);
+app.use("/auth", authRoute);
+app.use("/user", userRoute);
+app.use("/job", jobsRoute);
 app.get("/", (req, res) => {
   res.send("welcome to the page");
   console.log("hello");
