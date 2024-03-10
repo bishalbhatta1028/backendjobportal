@@ -27,10 +27,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/auth", authRoute);
-app.use("/api/user", userRoute);
-app.use("/api/job", jobsRoute);
-app.get("/api", (req, res) => {
+app.use("/", authRoute);
+app.use("/", userRoute);
+app.use("/", jobsRoute);
+app.get("/", (req, res) => {
   res.send("welcome to the page");
   console.log("hello");
 });
