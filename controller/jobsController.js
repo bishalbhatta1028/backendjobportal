@@ -110,7 +110,7 @@ export const updateJobController = async (req, res) => {
     const updateData = req.body;
     const job = await Job.findByIdAndUpdate(id, updateData, { new: true });
     if (!job) {
-      return res.stauts(404).send({ msg: "job not found" });
+      return res.status(404).send({ msg: "job not found" });
     }
     res.send(job);
   } catch (err) {
@@ -186,7 +186,5 @@ export const jobStatsController = async (req, res) => {
     });
   } catch (err) {
     res.status(400).send(err);
-
   }
 };
-
