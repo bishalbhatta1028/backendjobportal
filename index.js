@@ -1,11 +1,4 @@
-// imports
-//const express = require("express");///common js
-// module
 import express from "express";
-
-import swaggerUi from "swagger-ui-express";
-
-// import specs from "./controller/swagger.js";
 
 import dotenv from "dotenv";
 
@@ -26,13 +19,14 @@ const app = express();
 //middleware
 app.use(express.json());
 app.use(cors());
-
-app.use("/.auth", authRoute);
-app.use("/.user", userRoute);
-app.use("/.job", jobsRoute);
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+app.use("/auth", authRoute);
+app.use("/user", userRoute);
+app.use("/job", jobsRoute);
+console.log("hello");
+
 //validation middleware
 app.use(errorMidddleware);
 app.use((req, res) => {
